@@ -36,11 +36,5 @@ There are two means by which to get started (with and w/o Databricks Projects)
       - 05-Collections-and-Classes
       - 06-Pandas
       - 07-COVID-Demo
-   4. For the labs we suggest creating the **Labs** folder and import the following notebooks into that folder.
-      - Labs/02L-Variables-and-Data-Types-Lab
-      - Labs/03L-Fizz-Buzz-Lab
-      - Labs/04L-Functions-Lab
-      - Labs/05L-Collections-Lab
-      - Labs/06L-Pandas-Lab
-      - Labs/07L-Data-Analysis-Lab
-  
+   4. For the labs we suggest creating the **Labs** folder and importing the corresponding notebooks into that folder.
+   5. For the solutions, we suggest creating the **Solutions** folder and importing the corresponding notebooks into that folder.
