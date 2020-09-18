@@ -8,7 +8,7 @@ Besides the instructions provided here, your instructor will review these proced
 ## Getting Started with Databricks Projects
 1. Note: As of Sept, 18, 2020, Databricks Projects is only availbe as a private preview and may not be availble to all customers
 2. Click on the **Projects** icon in the navigational pane to the left
-3. By default, you should be in the folder **/Projects/*your-email-address* ** for example: **/Projects/student@azuredatabrickstraining.onmicrosoft.com**
+3. By default, you should be in the folder **/Projects/your-email-address** as in **/Projects/student@azuredatabrickstraining.onmicrosoft.com**
 4. Click the **Create Projects** button above the two swim lanes
 5. In the **Create Projects** dialog box
    1. Select **Clone from Git repo**
@@ -21,7 +21,7 @@ Besides the instructions provided here, your instructor will review these proced
 
 ## Getting Started without Databricks Projects
 1. Click on the **Home** icon in the navigational pane to the left
-2. By default, you should be in the folder **/Users/*your-email-address* ** for example: **/Users/student@azuredatabrickstraining.onmicrosoft.com**
+2. By default, you should be in the folder **/Users/your-email-address** as in **/Users/student@azuredatabrickstraining.onmicrosoft.com**
 3. In the swimlane for your email address, click on the down chevron and select **Create|Folder**
 4. In the **New Folder Name** dialog enter a name for this project, for example, **INT-JEPS-V2-IL**, or any other name you desire to use
 5. Import each notebook:
