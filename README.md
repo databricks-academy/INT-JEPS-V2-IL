@@ -36,5 +36,7 @@ There are two means by which to get started (with and w/o Databricks Projects)
       - 05-Collections-and-Classes
       - 06-Pandas
       - 07-COVID-Demo
-   4. For the labs we suggest creating the **Labs** folder and importing the corresponding notebooks into that folder.
-   5. For the solutions, we suggest creating the **Solutions** folder and importing the corresponding notebooks into that folder.
+   4. For the labs we suggest creating the **Labs** folder and importing the corresponding notebooks into that folder.  
+   The notebooks for this set will start with the URL The URL for each notebook will start with https://raw.githubusercontent.com/databricks-curriculum/INT-JEPS-V2-IL/master/Labs
+   5. For the solutions, we suggest creating the **Solutions** folder and importing the corresponding notebooks into that folder.  
+   The notebooks for this set will start with the URL The URL for each notebook will start with https://raw.githubusercontent.com/databricks-curriculum/INT-JEPS-V2-IL/master/Solutions
