@@ -1,7 +1,7 @@
 # Just Enoug Python for Spark
 This repository contains the resources students need to follow along with an instructor teaching this course in addition to the various labs and their solutions.
 
-There are two means by which to get started (with and w/o Databricks Projects)
+There are two means by which to get started (with and w/o Databricks Projects). Besides the instructions provided here, You instructor will review these procedures at the start of the course.
 
 ## Getting Started with Databricks Projects
 1. Note: As of Sept, 18, 2020, Databricks Projects is only availbe as a private preview and may not be availble to all customers
@@ -37,6 +37,8 @@ There are two means by which to get started (with and w/o Databricks Projects)
       - 06-Pandas
       - 07-COVID-Demo
    4. For the labs we suggest creating the **Labs** folder and importing the corresponding notebooks into that folder.  
-   The notebooks for this set will start with the URL The URL for each notebook will start with https://raw.githubusercontent.com/databricks-curriculum/INT-JEPS-V2-IL/master/Labs
+   The notebooks for this set will start with the URL  
+   https://raw.githubusercontent.com/databricks-curriculum/INT-JEPS-V2-IL/master/Labs
    5. For the solutions, we suggest creating the **Solutions** folder and importing the corresponding notebooks into that folder.  
-   The notebooks for this set will start with the URL The URL for each notebook will start with https://raw.githubusercontent.com/databricks-curriculum/INT-JEPS-V2-IL/master/Solutions
+   The notebooks for this set will start with the URL  
+   https://raw.githubusercontent.com/databricks-curriculum/INT-JEPS-V2-IL/master/Solutions
