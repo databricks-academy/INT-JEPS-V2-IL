@@ -28,7 +28,6 @@ There are two means by which to get started (with and w/o Databricks Projects)
       1. Select **URL**
       2. Enter the URL for the desired notebook, the first one being https://raw.githubusercontent.com/databricks-curriculum/INT-JEPS-V2-IL/master/01-Databricks-Environment.py
       3. Click **Import**
-        
    3. Repeat these steps for each notebook. Note: The URL for each notebook will start with https://raw.githubusercontent.com/databricks-curriculum/INT-JEPS-V2-IL/master/
       - 01-Databricks-Environment
       - 02-Variables-and-Data-Types
@@ -37,12 +36,11 @@ There are two means by which to get started (with and w/o Databricks Projects)
       - 05-Collections-and-Classes
       - 06-Pandas
       - 07-COVID-Demo
-        
    4. For the labs we suggest creating the **Labs** folder and import the following notebooks into that folder.
       - Labs/02L-Variables-and-Data-Types-Lab
       - Labs/03L-Fizz-Buzz-Lab
-      - 04L-Functions-Lab
-      - 05L-Collections-Lab
-      - 06L-Pandas-Lab
-      - 07L-Data-Analysis-Lab
+      - Labs/04L-Functions-Lab
+      - Labs/05L-Collections-Lab
+      - Labs/06L-Pandas-Lab
+      - Labs/07L-Data-Analysis-Lab
   
