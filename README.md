@@ -9,13 +9,11 @@ There are two means by which to get started (with and w/o Databricks Projects)
 2. By default, you should be in the folder **/Projects/*your-email-address* ** for example: **/Projects/student@azuredatabrickstraining.onmicrosoft.com**
 3. Click the **Create Projects** button above the two swim lanes
 4. In the **Create Projects** dialog box
-
-  1. Select **Clone from Git repo**
-  2. Enter the URL for the Git repo, in this case, https://github.com/databricks-curriculum/INT-JEPS-V2-IL.git
-  3. The Git provider **GitHub** should be selected for you automatically
-  4. The **Project name** should default to **INT-JEPS-V2-IL** - feel free to rename this if you like
-  5. Click the **Create** button
-    
+   1. Select **Clone from Git repo**
+   2. Enter the URL for the Git repo, in this case, https://github.com/databricks-curriculum/INT-JEPS-V2-IL.git
+   3. The Git provider **GitHub** should be selected for you automatically
+   4. The **Project name** should default to **INT-JEPS-V2-IL** - feel free to rename this if you like
+   5. Click the **Create** button
 5 Once the import is done, select the project folder, the default being **INT-JEPS-V2-IL**
 6. From here you should be able to follow along with your instructor
 
