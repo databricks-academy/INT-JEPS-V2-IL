@@ -1,4 +1,5 @@
 # Databricks notebook source
+# MAGIC 
 # MAGIC %md-sandbox
 # MAGIC 
 # MAGIC <div style="text-align: center; line-height: 0; padding-top: 9px;">
@@ -29,7 +30,11 @@
 
 # COMMAND ----------
 
-# TODO
+# ANSWER
+import pandas as pd
+
+df = pd.read_csv("/dbfs/databricks-datasets/learning-spark-v2/sf-airbnb/sf-airbnb.csv")
+df.head()
 
 # COMMAND ----------
 
@@ -42,7 +47,9 @@
 
 # COMMAND ----------
 
-# TODO
+# ANSWER
+df = df[["beds", "bedrooms", "bathrooms", "property_type", "neighbourhood_cleansed"]]
+df.head()
 
 # COMMAND ----------
 
@@ -51,7 +58,8 @@
 
 # COMMAND ----------
 
-# TODO
+# ANSWER
+df.sort_values("bedrooms", ascending=False)
 
 # COMMAND ----------
 
@@ -72,7 +80,8 @@ df[df.isna().any(axis=1)]
 
 # COMMAND ----------
 
-# TODO
+# ANSWER
+df = df.fillna(0)
 
 # COMMAND ----------
 
@@ -82,7 +91,8 @@ df[df.isna().any(axis=1)]
 
 # COMMAND ----------
 
-# TODO
+# ANSWER
+df["bathrooms"].mean()
 
 # COMMAND ----------
 
@@ -93,8 +103,9 @@ df[df.isna().any(axis=1)]
 
 # COMMAND ----------
 
-# TODO
-financial_district_df = <FILL_IN>
+# ANSWER
+financial_district_df = df[df["neighbourhood_cleansed"] == "Financial District"]
+financial_district_df.head()
 
 # COMMAND ----------
 
@@ -107,7 +118,8 @@ financial_district_df = <FILL_IN>
 
 # COMMAND ----------
 
-# TODO
+# ANSWER
+financial_district_df.groupby(["property_type"]).count().sort_values("beds", ascending=False).plot(kind="bar", y="beds")
 
 
 # COMMAND ----------

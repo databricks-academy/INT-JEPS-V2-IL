@@ -1,4 +1,5 @@
 # Databricks notebook source
+# MAGIC 
 # MAGIC %md-sandbox
 # MAGIC 
 # MAGIC <div style="text-align: center; line-height: 0; padding-top: 9px;">
@@ -21,8 +22,7 @@
 
 # COMMAND ----------
 
-# ANSWER
-conversion_rate = 1.18
+# TODO
 
 # COMMAND ----------
 
@@ -31,8 +31,7 @@ conversion_rate = 1.18
 
 # COMMAND ----------
 
-# ANSWER
-type(conversion_rate)
+# TODO
 
 # COMMAND ----------
 
@@ -41,9 +40,9 @@ type(conversion_rate)
 
 # COMMAND ----------
 
-# ANSWER
+# TODO
 euro_amount = 567
-usd_amount = conversion_rate * euro_amount
+usd_amount = # FILL_IN
 usd_amount
 
 # COMMAND ----------
@@ -53,8 +52,7 @@ usd_amount
 
 # COMMAND ----------
 
-# ANSWER
-print(f"{euro_amount} Euros is equal to ${usd_amount} USD")
+# TODO
 
 
 # COMMAND ----------

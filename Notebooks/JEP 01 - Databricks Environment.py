@@ -1,4 +1,5 @@
 # Databricks notebook source
+# MAGIC 
 # MAGIC %md-sandbox
 # MAGIC 
 # MAGIC <div style="text-align: center; line-height: 0; padding-top: 9px;">
@@ -101,6 +102,10 @@ x
 
 # MAGIC %md
 # MAGIC ### Try displaying your favorite image in a markdown cell and adding a title cell.
+
+# COMMAND ----------
+
+# TODO
 
 # COMMAND ----------
 

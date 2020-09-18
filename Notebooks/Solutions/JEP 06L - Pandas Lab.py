@@ -1,4 +1,5 @@
 # Databricks notebook source
+# MAGIC 
 # MAGIC %md-sandbox
 # MAGIC 
 # MAGIC <div style="text-align: center; line-height: 0; padding-top: 9px;">
@@ -21,7 +22,12 @@
 
 # COMMAND ----------
 
-# TODO
+# ANSWER
+import pandas as pd
+
+data = [[1,2,3], [4,5,6], [7,8,9]]
+df = pd.DataFrame(data=data, columns = ["one", "two", "three"])
+df
 
 # COMMAND ----------
 
@@ -30,7 +36,8 @@
 
 # COMMAND ----------
 
-# TODO
+# ANSWER
+df[["three"]]
 
 # COMMAND ----------
 
@@ -39,7 +46,9 @@
 
 # COMMAND ----------
 
-# TODO
+# ANSWER
+print(type(df["three"]))
+df["three"]
 
 # COMMAND ----------
 
@@ -48,7 +57,9 @@
 
 # COMMAND ----------
 
-# TODO
+# ANSWER
+
+df["two"][1]
 
 # COMMAND ----------
 
@@ -57,7 +68,10 @@
 
 # COMMAND ----------
 
-# TODO
+# ANSWER
+
+df["row sum"] = df["one"] + df["two"] + df["three"]
+df
 
 
 # COMMAND ----------
