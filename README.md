@@ -1,7 +1,9 @@
 # Just Enoug Python for Spark
 This repository contains the resources students need to follow along with the instructor teaching this course in addition to the various labs and their solutions.
 
-There are two means by which to get started (with and w/o Databricks Projects). Besides the instructions provided here, You instructor will review these procedures at the start of the course.
+There are two means by which to get started (with and w/o Databricks Projects).
+
+Besides the instructions provided here, You instructor will review these procedures at the start of the course.
 
 ## Getting Started with Databricks Projects
 1. Note: As of Sept, 18, 2020, Databricks Projects is only availbe as a private preview and may not be availble to all customers
