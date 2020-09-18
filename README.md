@@ -4,18 +4,18 @@ This repository contains the resources students need to follow along with an ins
 There are two means by which to get started (with and w/o Databricks Projects)
 
 ## Getting Started with Databricks Projects
-0. Note: As of Sept, 18, 2020, Databricks Projects is only availbe as a private preview and may not be availble to all customers
-1. Click on the **Projects** icon in the navigational pane to the left
-2. By default, you should be in the folder **/Projects/*your-email-address* ** for example: **/Projects/student@azuredatabrickstraining.onmicrosoft.com**
-3. Click the **Create Projects** button above the two swim lanes
-4. In the **Create Projects** dialog box
+1. Note: As of Sept, 18, 2020, Databricks Projects is only availbe as a private preview and may not be availble to all customers
+2. Click on the **Projects** icon in the navigational pane to the left
+3. By default, you should be in the folder **/Projects/*your-email-address* ** for example: **/Projects/student@azuredatabrickstraining.onmicrosoft.com**
+4. Click the **Create Projects** button above the two swim lanes
+5. In the **Create Projects** dialog box
    1. Select **Clone from Git repo**
    2. Enter the URL for the Git repo, in this case, https://github.com/databricks-curriculum/INT-JEPS-V2-IL.git
    3. The Git provider **GitHub** should be selected for you automatically
    4. The **Project name** should default to **INT-JEPS-V2-IL** - feel free to rename this if you like
    5. Click the **Create** button
-5 Once the import is done, select the project folder, the default being **INT-JEPS-V2-IL**
-6. From here you should be able to follow along with your instructor
+6. Once the import is done, select the project folder, the default being **INT-JEPS-V2-IL**
+7. From here you should be able to follow along with your instructor
 
 ## Getting Started without Databricks Projects
 1. Click on the **Home** icon in the navigational pane to the left
