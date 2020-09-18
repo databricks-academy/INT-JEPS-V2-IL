@@ -25,30 +25,26 @@ There are two means by which to get started (with and w/o Databricks Projects)
 3. In the swimlane for your email address, click on the down chevron and select **Create|Folder**
 4. In the **New Folder Name** dialog enter a name for this project, for example, **INT-JEPS-V2-IL**, or any other name you desire to use
 5. Import each notebook:
-
-  1. In the swimlane **INT-JEPS-V2-IL**, click the down chevron and select **Import**
-  2. In the **Import Notebooks** dialog
-    
-    1. Select **URL**
-    2. Enter the URL for the desired notebook, the first one being https://raw.githubusercontent.com/databricks-curriculum/INT-JEPS-V2-IL/master/01-Databricks-Environment.py
-    3. Click **Import**
+   1. In the swimlane **INT-JEPS-V2-IL**, click the down chevron and select **Import**
+   2. In the **Import Notebooks** dialog
+      1. Select **URL**
+      2. Enter the URL for the desired notebook, the first one being https://raw.githubusercontent.com/databricks-curriculum/INT-JEPS-V2-IL/master/01-Databricks-Environment.py
+      3. Click **Import**
         
-  3. Repeat these steps for each notebook. Note: The URL for each notebook will start with https://raw.githubusercontent.com/databricks-curriculum/INT-JEPS-V2-IL/master/
-    
-    * 01-Databricks-Environment
-    * 02-Variables-and-Data-Types
-    * 03-Conditionals-and-Loops
-    * 04-Methods-Functions-Packages
-    * 05-Collections-and-Classes
-    * 06-Pandas
-    * 07-COVID-Demo
+   3. Repeat these steps for each notebook. Note: The URL for each notebook will start with https://raw.githubusercontent.com/databricks-curriculum/INT-JEPS-V2-IL/master/
+      - 01-Databricks-Environment
+      - 02-Variables-and-Data-Types
+      - 03-Conditionals-and-Loops
+      - 04-Methods-Functions-Packages
+      - 05-Collections-and-Classes
+      - 06-Pandas
+      - 07-COVID-Demo
         
    4. For the labs we suggest creating the **Labs** folder and import the following notebooks into that folder.
-     
-     * Labs/02L-Variables-and-Data-Types-Lab
-     * Labs/03L-Fizz-Buzz-Lab
-     * 04L-Functions-Lab
-     * 05L-Collections-Lab
-     * 06L-Pandas-Lab
-     * 07L-Data-Analysis-Lab
+      - Labs/02L-Variables-and-Data-Types-Lab
+      - Labs/03L-Fizz-Buzz-Lab
+      - 04L-Functions-Lab
+      - 05L-Collections-Lab
+      - 06L-Pandas-Lab
+      - 07L-Data-Analysis-Lab
   
