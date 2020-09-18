@@ -1,5 +1,4 @@
 # Databricks notebook source
-# MAGIC 
 # MAGIC %md-sandbox
 # MAGIC 
 # MAGIC <div style="text-align: center; line-height: 0; padding-top: 9px;">
@@ -18,7 +17,18 @@
 
 # COMMAND ----------
 
-# TODO
+# ANSWER
+
+num = 10
+
+if (num % 5 == 0) and (num % 3 == 0):
+  print("FizzBuzz")
+elif num % 5 == 0:
+  print("Buzz")
+elif num % 3 == 0:
+  print("Fizz")
+else:
+  print(num)
 
 # COMMAND ----------
 
@@ -29,7 +39,20 @@
 
 # COMMAND ----------
 
-# TODO
+# ANSWER
+num = "hello"
+
+if type(num) == int or type(num) == float:
+  if (num % 5 == 0) and (num % 3 == 0):
+    print("FizzBuzz")
+  elif num % 5 == 0:
+    print("Buzz")
+  elif num % 3 == 0:
+    print("Fizz")
+  else:
+    print(num)
+else:
+  print("Not a number")
 
 # COMMAND ----------
 
@@ -44,7 +67,19 @@ num_list = [1, 1.56, 3, 5, 15, 30, 50, 77, "Hello"]
 
 # COMMAND ----------
 
-# TODO
+# ANSWER
+for num in num_list:
+  if type(num) == int or type(num) == float:
+    if (num % 5 == 0) and (num % 3 == 0):
+      print("FizzBuzz")
+    elif num % 5 == 0:
+      print("Buzz")
+    elif num % 3 == 0:
+      print("Fizz")
+    else:
+      print(num)
+  else:
+    print("Not a number")
 
 
 # COMMAND ----------

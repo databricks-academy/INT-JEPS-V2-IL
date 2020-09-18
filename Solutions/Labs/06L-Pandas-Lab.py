@@ -1,5 +1,4 @@
 # Databricks notebook source
-# MAGIC 
 # MAGIC %md-sandbox
 # MAGIC 
 # MAGIC <div style="text-align: center; line-height: 0; padding-top: 9px;">
@@ -9,53 +8,69 @@
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC ## Variables and Data Types Lab
+# MAGIC # Pandas Lab
 # MAGIC 
-# MAGIC Let's convert EUR to USD and prints the results. The current exchange rate as of 14 August 2020 is 1 EUR -> 1.18 USD.
+# MAGIC In this lab, you will use [pandas](https://pandas.pydata.org/docs/) for basic data manipulation.
 
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC First let's create a variable called `conversion_rate` to use.
+# MAGIC Create a DataFrame called `df` with 3 columns and 3 rows with integers like in the following image. It should also have the appropriate column names.
 # MAGIC 
-# MAGIC This way, if the rate ever changes, we would only need to modify this single line of code and have everything else still work properly!
+# MAGIC ![DataFrame](https://files.training.databricks.com/images/create_dataframe.png)
 
 # COMMAND ----------
 
 # ANSWER
-conversion_rate = 1.18
+import pandas as pd
+
+data = [[1,2,3], [4,5,6], [7,8,9]]
+df = pd.DataFrame(data=data, columns = ["one", "two", "three"])
+df
 
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC Check what is the type of `conversion_rate`.
+# MAGIC Display a DataFrame that only has the column `three`.
 
 # COMMAND ----------
 
 # ANSWER
-type(conversion_rate)
+df[["three"]]
 
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC Given that we have 567 EUR, compute what the corresponding amount should be in USD, assigning the result to the variable `usd_amount`. Make sure you to use the variable `conversion_rate` in your computation.
+# MAGIC Return a Series (not DataFrame) object which just contains the values from the column `three`.
 
 # COMMAND ----------
 
 # ANSWER
-euro_amount = 567
-usd_amount = conversion_rate * euro_amount
-usd_amount
+print(type(df["three"]))
+df["three"]
 
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC Print out the statement `{} Euros is equal to ${} USD`, passing in the variables `euro_amount` and `usd_amount` into the expression.
+# MAGIC Programmatically extract the number `5` from `df`. Which column and row do you need to access?
 
 # COMMAND ----------
 
 # ANSWER
-print(f"{euro_amount} Euros is equal to ${usd_amount} USD")
+
+df["two"][1]
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC Add a new column called `row sum` to `df` which contains the sum of entries across each row in `df`.
+
+# COMMAND ----------
+
+# ANSWER
+
+df["row sum"] = df["one"] + df["two"] + df["three"]
+df
 
 
 # COMMAND ----------
