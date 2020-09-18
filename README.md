@@ -28,20 +28,8 @@ Besides the instructions provided here, your instructor will review these proced
    1. In the swimlane **INT-JEPS-V2-IL**, click the down chevron and select **Import**
    2. In the **Import Notebooks** dialog
       1. Select **URL**
-      2. Enter the URL for the desired notebook, the first one being https://raw.githubusercontent.com/databricks-curriculum/INT-JEPS-V2-IL/master/01-Databricks-Environment.py
+      2. Enter the URL to the **Notebooks.dbc** file  
+      https://github.com/databricks-curriculum/INT-JEPS-V2-IL/raw/master/Notebooks.dbc
       3. Click **Import**
-6. Repeat step #5 for each notebook. Note: The URL for each notebook will start with https://raw.githubusercontent.com/databricks-curriculum/INT-JEPS-V2-IL/master/
-   - 01-Databricks-Environment
-   - 02-Variables-and-Data-Types
-   - 03-Conditionals-and-Loops
-   - 04-Methods-Functions-Packages
-   - 05-Collections-and-Classes
-   - 06-Pandas
-   - 07-COVID-Demo
-7. For the labs we suggest creating the **Labs** folder and importing the corresponding notebooks into that folder.  
-   The notebooks for this set will start with the URL  
-   https://raw.githubusercontent.com/databricks-curriculum/INT-JEPS-V2-IL/master/Labs
-8. For the solutions, we suggest creating the **Solutions** folder and importing the corresponding notebooks into that folder.  
-   The notebooks for this set will start with the URL  
-   https://raw.githubusercontent.com/databricks-curriculum/INT-JEPS-V2-IL/master/Solutions
+6. Once the import is done, select the **Notebooks** folder
 9. From here you should be able to follow along with your instructor
