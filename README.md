@@ -42,3 +42,4 @@ There are two means by which to get started (with and w/o Databricks Projects). 
    5. For the solutions, we suggest creating the **Solutions** folder and importing the corresponding notebooks into that folder.  
    The notebooks for this set will start with the URL  
    https://raw.githubusercontent.com/databricks-curriculum/INT-JEPS-V2-IL/master/Solutions
+6. From here you should be able to follow along with your instructor
