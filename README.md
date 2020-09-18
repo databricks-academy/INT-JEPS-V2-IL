@@ -30,18 +30,18 @@ Besides the instructions provided here, your instructor will review these proced
       1. Select **URL**
       2. Enter the URL for the desired notebook, the first one being https://raw.githubusercontent.com/databricks-curriculum/INT-JEPS-V2-IL/master/01-Databricks-Environment.py
       3. Click **Import**
-   3. Repeat these steps for each notebook. Note: The URL for each notebook will start with https://raw.githubusercontent.com/databricks-curriculum/INT-JEPS-V2-IL/master/
-      - 01-Databricks-Environment
-      - 02-Variables-and-Data-Types
-      - 03-Conditionals-and-Loops
-      - 04-Methods-Functions-Packages
-      - 05-Collections-and-Classes
-      - 06-Pandas
-      - 07-COVID-Demo
-   4. For the labs we suggest creating the **Labs** folder and importing the corresponding notebooks into that folder.  
+6. Repeat step #5 for each notebook. Note: The URL for each notebook will start with https://raw.githubusercontent.com/databricks-curriculum/INT-JEPS-V2-IL/master/
+   - 01-Databricks-Environment
+   - 02-Variables-and-Data-Types
+   - 03-Conditionals-and-Loops
+   - 04-Methods-Functions-Packages
+   - 05-Collections-and-Classes
+   - 06-Pandas
+   - 07-COVID-Demo
+7. For the labs we suggest creating the **Labs** folder and importing the corresponding notebooks into that folder.  
    The notebooks for this set will start with the URL  
    https://raw.githubusercontent.com/databricks-curriculum/INT-JEPS-V2-IL/master/Labs
-   5. For the solutions, we suggest creating the **Solutions** folder and importing the corresponding notebooks into that folder.  
+8. For the solutions, we suggest creating the **Solutions** folder and importing the corresponding notebooks into that folder.  
    The notebooks for this set will start with the URL  
    https://raw.githubusercontent.com/databricks-curriculum/INT-JEPS-V2-IL/master/Solutions
-6. From here you should be able to follow along with your instructor
+9. From here you should be able to follow along with your instructor
