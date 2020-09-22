@@ -1,0 +1,22 @@
+{
+  "published_on": "Sep 21, 2020",
+  "requirements": "Any databricks workspace",
+  "developer": {
+    "name": "Jacob Parr",
+    "email": "jacob.parr@databricks.com",
+    "slack": "https://databricks.slack.com/team/U5V5F358T"
+  },
+	"links": [{
+			"name": "Projects Repo",
+			"value": "https://github.com/databricks-academy/INT-JEPFS-V2-IL"
+		},
+		{
+			"name": "Change Log",
+			"value": "https://github.com/databricks-academy/INT-JEPFS-V2-IL/blob/published/CHANGELOG.md"
+		},
+		{
+			"name": "Notebooks DBC",
+			"value": "https://github.com/databricks-academy/INT-JEPFS-V2-IL/raw/published/DBCs/Notebooks.dbc"
+		}
+	]
+}
