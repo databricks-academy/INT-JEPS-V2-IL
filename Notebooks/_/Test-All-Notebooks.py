@@ -28,6 +28,7 @@
 # MAGIC   f"{home}/Optional/JEP 06 - Pandas",
 # MAGIC   f"{home}/Optional/JEP 07 - COVID Demo",
 # MAGIC   
+# MAGIC   # Not expected to compile
 # MAGIC   # f"{home}/Labs/JEP 02L - Variables and Data Types Lab",
 # MAGIC   # f"{home}/Labs/JEP 03L - Fizz Buzz Lab",
 # MAGIC   # f"{home}/Labs/JEP 04L - Functions Lab",
