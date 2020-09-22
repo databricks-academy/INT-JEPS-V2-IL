@@ -19,7 +19,7 @@ Besides the instructions provided here, your instructor will review these proced
 6. Once the import is done, select the project folder, the default being **INT-JEPS-V2-IL**
 7. From here you should be able to follow along with your instructor
 
-## Getting Started without Databricks Projects
+## Getting Started without Databricks Notebooks
 1. Click on the **Home** icon in the navigational pane to the left
 2. By default, you should be in the folder **/Users/your-email-address** as in **/Users/student@azuredatabrickstraining.onmicrosoft.com**
 3. In the swimlane for your email address, click on the down chevron and select **Create|Folder**
