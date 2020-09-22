@@ -1,5 +1,10 @@
 # Just Enough Python for  Spark
 
+## Version 2.0.2 (9-22-2020)
+* Removed extranious notebooks from solutions folder
+* Minor notebook renaming to follow standards
+* Added run-all tests for all notebooks
+
 ## Version 2.0.1 (9-2-2020)
 * Update build for smaller Databricks logo
 
