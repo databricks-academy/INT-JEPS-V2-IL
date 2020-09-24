@@ -15,33 +15,82 @@
 # MAGIC - Use given examples to explore fundamental concepts in Python, such as: 
 # MAGIC     * Data types
 # MAGIC     * Variables
-# MAGIC     * Print values
+# MAGIC     * Printing values
 # MAGIC     * Assert statements
-# MAGIC    
-# MAGIC Recommended Resources:
-# MAGIC * [Python for Data Analysis by Wes McKinney](https://www.amazon.com/gp/product/1491957662/ref=as_li_qf_asin_il_tl?ie=UTF8&tag=quantpytho-20&creative=9325&linkCode=as2&creativeASIN=1491957662&linkId=ea8de4253cce96046e8ab0383ac71b33)
-# MAGIC * [Python reference sheet](http://www.cogsci.rpi.edu/~destem/igd/python_cheat_sheet.pdf)
-# MAGIC * [Python official tutorial](https://docs.python.org/3/tutorial/)
-# MAGIC 
-# MAGIC Here is some documentation to help with [markdown cells](https://forums.databricks.com/static/markdown/help.html).
+# MAGIC  
 
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC ### 1) Numbers: Using Python as your calculator!
+# MAGIC ##![Spark Logo Tiny](https://files.training.databricks.com/images/105/logo_spark_tiny.png) Comments
+# MAGIC 
+# MAGIC Comments are any text that appear after the **`#`** symbol
+# MAGIC 
+# MAGIC They are often used to document various aspects of your code
+# MAGIC 
+# MAGIC They can also be used to temporary disable code (aka commenting out)
 
 # COMMAND ----------
 
-# Hit the run button, or shift + enter
-# The # is a comment, which means that whatever you write after the # will not be executed
-1+1 
+# This is a comment - it's here only for explination
+# Run this cell, and notice the lack of output.
+# Then uncomment the following line and run this cell again.
+# print("Hello world!")
+
+# COMMAND ----------
+
+# MAGIC %md Comments can also appear after code to provide a different style of documentation
+
+# COMMAND ----------
+
+print("Step 1") # This is step #1
+print("Step 2") # Step number 2 comes after #1
+print("Step 3") # This is the last step
 
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC ### 2) Strings
+# MAGIC ##![Spark Logo Tiny](https://files.training.databricks.com/images/105/logo_spark_tiny.png) Numbers &amp; Basic Mathematical Operators
+# MAGIC Run the following cell and note it's output
+
+# COMMAND ----------
+
+True # This is a boolean data type
+
+# COMMAND ----------
+
+# MAGIC %md The Python interpreter will (by default) print the result of the last operation to the console.
 # MAGIC 
-# MAGIC Strings in Python have `''` or `""` around the content. Notice how it performs differently when you add two strings together instead of two numbers.
+# MAGIC We can see that in the rendereding of **`Out[1]: True`** above.
+# MAGIC 
+# MAGIC We can leverage that feature to perform some basic mathimatical operations on various numbers.
+
+# COMMAND ----------
+
+1 + 1
+
+# COMMAND ----------
+
+3.0 - 0.5
+
+# COMMAND ----------
+
+4 * 8
+
+# COMMAND ----------
+
+24 / 5
+
+# COMMAND ----------
+
+15 % 3
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC ##![Spark Logo Tiny](https://files.training.databricks.com/images/105/logo_spark_tiny.png) Strings
+# MAGIC 
+# MAGIC Strings in Python have `''` (single quotes),  `""` double quotes or tripple quotes around the content.
 
 # COMMAND ----------
 
@@ -49,114 +98,221 @@
 
 # COMMAND ----------
 
-'Ice cream' + 'is paradise'
+"More ice cream"
 
 # COMMAND ----------
 
-# MAGIC %md
-# MAGIC If you are not sure what "type" something is, you can call the function `type()`. We will discuss functions in detail later.
+"""A really long string
+with multiple lines"""
 
 # COMMAND ----------
 
-type('Ice cream')
-
-# COMMAND ----------
-
-# MAGIC %md
-# MAGIC You'll notice that if you put quotes around a number, its type is a string.
-
-# COMMAND ----------
-
-type("1")
-
-# COMMAND ----------
-
-# MAGIC %md
-# MAGIC Within numeric fields, there are two types: Integers and Floats. Integers are whole numbers, and floats contain a decimal place.
-
-# COMMAND ----------
-
-type(1)
-
-# COMMAND ----------
-
-type(1.)
-
-# COMMAND ----------
-
-# MAGIC %md
-# MAGIC ### 3) Variables
+# MAGIC %md Like, numbers, strings can be "added" to gether.
 # MAGIC 
-# MAGIC As Shakespeare famously wrote: `A rose by any other name would smell as sweet`. A variable in Python simply holds a value - you can call it any name you want (within reason...)!
+# MAGIC This is more commonly referred to as concatenation.
+
+# COMMAND ----------
+
+'I love' + "to eat" + """ice cream"""
+
+# COMMAND ----------
+
+# MAGIC %md What mistake did we make in concatenating those three strings?
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC ##![Spark Logo Tiny](https://files.training.databricks.com/images/105/logo_spark_tiny.png) Data Types
+# MAGIC We just saw an example of four data types:
+# MAGIC * Boolean values: **`bool`**
+# MAGIC * Whole or integral numbers: : **`int`**
+# MAGIC * Floating-point numbers : **`float`**
+# MAGIC * Strings values: : **`str`**
 # MAGIC 
-# MAGIC If you plan to re-use the same value multiple times throughout your notebook, it is best to put it in a variable so you can change its value only once, it will be reflected throughout all uses in the notebook.
+# MAGIC By combing these basic data types (and a few to be covered later),  
+# MAGIC Python allows you to create a nearly infinite set of new types.
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC If you are not sure what "type" something is, you can employ the <a href="https://docs.python.org/3/library/functions.html#type" target="_blank">type()</a> function.
 # MAGIC 
-# MAGIC A few things to note on Python Variable Names from [W3 Schools](https://www.w3schools.com/python/gloss_python_variable_names.asp#:~:text=Rules%20for%20Python%20variables%3A,0%2D9%2C%20and%20_%20):
+# MAGIC We will discuss functions in detail later, but we can easily employ simple functions like this one without fully understanding them.
+
+# COMMAND ----------
+
+type(True)
+
+# COMMAND ----------
+
+type(False)
+
+# COMMAND ----------
+
+type(132)
+
+# COMMAND ----------
+
+type(34.62)
+
+# COMMAND ----------
+
+type('A single quote string')
+
+# COMMAND ----------
+
+type("A double quote string")
+
+# COMMAND ----------
+
+type("""A tripple quote string""")
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC Can you predict which type this will produce?
+
+# COMMAND ----------
+
+type("723")
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC ##![Spark Logo Tiny](https://files.training.databricks.com/images/105/logo_spark_tiny.png) Variables
+# MAGIC 
+# MAGIC In Python, a variable holds a value.
+# MAGIC 
+# MAGIC If you plan to re-use the same value multiple times in your code, it is best to put it in a variable so you can change its value only once.
+# MAGIC 
+# MAGIC Changes to the one variable will be reflected throughout all of your code.
+# MAGIC 
+# MAGIC A few things to note on Python variable names:
 # MAGIC * A variable name must start with a letter or the underscore character
-# MAGIC * A variable name cannot start with a number
-# MAGIC * A variable name can only contain alpha-numeric characters and underscores (A-z, 0-9, and _ )
-# MAGIC * Variable names are case-sensitive (`age`, `Age` and `AGE` are three different variables)
+# MAGIC * Conversely, a variable name cannot start with a number
+# MAGIC * A variable name can only contain alpha-numeric characters and underscores (a-Z, A-Z, 0-9, and _ )
+# MAGIC * Variable names are case-sensitive (`age`, `Age`, and `AGE` are three different variables)
+# MAGIC 
+# MAGIC Beyond these hard requirements, additional standards are often imposed by development teams so as to produce consistent and easy to read code.
+# MAGIC 
+# MAGIC The most common standard for Python is <a href="https://www.python.org/dev/peps/pep-0008/" target="_blank">PEP 8</a>
+# MAGIC 
+# MAGIC PEP 8's most iconic feature is the use of an underscore in function and variable names.
 
 # COMMAND ----------
 
-best_food = 'Ice cream'
-best_food
+# Examples of valid variable names:
+best_food = "ice cream"    # An example of the snake case naming convention from PEP 8
+bestFood = "pizza"         # An example of the cammel case
+BEST_FOOD = "watermellon"
+_BEST_FOOD = "brussel sprouts"
+
+# Examples of invalid variable names:
+# 1_best_food = "broccoli"
+# $_best_food = "waffles"
+
+# COMMAND ----------
+
+# MAGIC %md We will use the **`best_food`** variable quite extensively in the rest of this notebook.
 
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC ### 4) Print Statements
+# MAGIC ##![Spark Logo Tiny](https://files.training.databricks.com/images/105/logo_spark_tiny.png) The Print Function
 # MAGIC 
-# MAGIC In Databricks or Jupyter notebooks, it will automatically print out the last line of the cell that it evaluates.
+# MAGIC We can force Python to render output to the console by using the [print()](https://www.w3schools.com/python/ref_func_print.asp) function.
 # MAGIC 
-# MAGIC However, we can force it to print out other components by using a [print()](https://www.w3schools.com/python/ref_func_print.asp) statement.
+# MAGIC We already saw this early in the statement **`print("Hello world")`**
+# MAGIC 
+# MAGIC We can employ it here to print the three variables we just declared.
 
 # COMMAND ----------
 
-print("Hi there, tell me the best food.")
 print(best_food)
+print(bestFood)
+print(BEST_FOOD)
+print(_BEST_FOOD)
 
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC You can also be more explicit about what you are printing. You can add your variable within your print statement.
+# MAGIC Introduced in Python 3.6, **f-strings** provide another neat feature that comes in really handy when used in conjunction with the **`print()`** function.
 # MAGIC 
-# MAGIC In Python 3.5, you'd have to print it like this:
-
-# COMMAND ----------
-
-print("{} is the best food on earth.".format(best_food))
-
-# COMMAND ----------
-
-# MAGIC %md
-# MAGIC In Python 3.6+, you can use f-string formatting, e.g. `f"{my_variable}"`
-
-# COMMAND ----------
-
-print(f"{best_food} is the best food on earth.")
-
-# COMMAND ----------
-
-# MAGIC %md
-# MAGIC ### 5) Assert Statements and Type Checking
+# MAGIC **f-strings** allow you to build a string composed of one or more values in an rather concise manner.
 # MAGIC 
-# MAGIC We have been defining quite a number of variables. What if we forget what types are the variables? Don't worry -- we can always check using [type()](https://www.w3schools.com/python/ref_func_type.asp)!
+# MAGIC Let's take a quick look at the "hard" way to compose such a string and how **f-strings** makes this easier
 
 # COMMAND ----------
 
-type(best_food)
+# Just for refference, what was the "best" food?
+print(best_food) 
+
+# COMMAND ----------
+
+# Without f-strings, we have to concatenate the values
+text = "The best food ever is " + best_food + ", especially when it's hot outside!"
+print(text)
+
+# COMMAND ----------
+
+# With f-strings, we can "inject" the variable directly into the string
+text = f"The best food ever is {best_food}, especially when it's hot outside!"
+print(text)
+
+# COMMAND ----------
+
+# And just to be a little more consise...
+print(f"The best food ever is {best_food}, especially when it's hot outside!")
 
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC If you want to test if two things are equal, you can put them on either side of the `==`. Conversely, if you want to test if things are not equal, you can do `!=`.
+# MAGIC %md
+# MAGIC ##![Spark Logo Tiny](https://files.training.databricks.com/images/105/logo_spark_tiny.png) Assert Statements and Type Checking
 # MAGIC 
-# MAGIC This returns a `Boolean`, which is a type that only contains the values `True` or `False` (case-sensitive).
+# MAGIC If you want to test if two things are equal, you can put them on either side of the **`==`** operator.
 
 # COMMAND ----------
 
-2 == 2
+232 == 232
+
+# COMMAND ----------
+
+# MAGIC %md 
+# MAGIC Conversely, if you want to test if things are not equal, you can use the **`!=`** operator.
+
+# COMMAND ----------
+
+723 != 723
+
+# COMMAND ----------
+
+# MAGIC %md Both the **`==`** opeartor and the **`!=`** operator return a boolean value as seen above.
+# MAGIC 
+# MAGIC Other common comparison operators include:
+
+# COMMAND ----------
+
+32 > 12
+
+# COMMAND ----------
+
+43 < 32
+
+# COMMAND ----------
+
+65 >= 13
+
+# COMMAND ----------
+
+99 <= 99
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC But what if we wanted to test if a value was of a certain type?
+# MAGIC 
+# MAGIC For this we can use the `**type()**` function and combine it with either equality operator as seen here:
 
 # COMMAND ----------
 
@@ -164,32 +320,62 @@ type(best_food) == str
 
 # COMMAND ----------
 
-type(best_food) != str
+type(32) == int
+
+# COMMAND ----------
+
+type(True) == bool
+
+# COMMAND ----------
+
+type(1.32) == float
 
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC If the equality test does not hold, you might want to throw an error message. That's exactly what an [assert](https://www.w3schools.com/python/python_ref_keywords.asp) statement allows you to do. You assert that two things should be equal, and if they are not, it will throw an error and print out a message you provide.
+# MAGIC What if you wanted to verify, or assert, a specific precondition.
+# MAGIC 
+# MAGIC One example might be the type of a variable, in which case execution should stop if it is of the wrong type.
+# MAGIC 
+# MAGIC That's exactly what an [assert](https://www.w3schools.com/python/python_ref_keywords.asp) statement allows you to do.
+# MAGIC 
+# MAGIC If the test does not pass, execution stops, and Python prints an error message to the console as demonstrated here:
 
 # COMMAND ----------
 
+# To force the assertion failure, change line #4 below
+# from a string value to an integer or boolean value.
+
+best_food = "Pizza"
 assert type(best_food) == str, "If this fails, it will print this message"
 
+print("All done")
+
+# COMMAND ----------
+
+# MAGIC %md 
+# MAGIC If we wanted to make the error message a little more useful, we can employ an **f-string** instead:
+
+# COMMAND ----------
+
+best_food = "BBQ Chicken"
+assert type(best_food) == str, f"Expected best_food to be of type str but found {type(best_food)} instead"
+
+print("All done")
+
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC `assert` and `type` are reserved keywords in Python, so make sure you don't accidentally created any variables named `assert` or `type`!
+# MAGIC `assert` is a keyword in Python, so make sure you don't declare any variables named **`assert`**!
 # MAGIC 
-# MAGIC **Question**: What other reserved keywords have you seen?
-
-# COMMAND ----------
-
-# MAGIC %md
-# MAGIC Summary of types:
-# MAGIC 0. An `int` is a numeric type in Python. It is an integer, so a whole number without decimals. 
-# MAGIC 0. A `float` is a numeric type in Python. It is basically a number that has decimal places. 
-# MAGIC 0. A `String` type is a sequence of characters, such as the food `"ice cream"`. It can be any sequence of characters too, not just words. `"Hello123"` or even `"123"` could also be a string. They are enclosed in quotes.
-# MAGIC 0. A `Boolean` type is either True or False.
+# MAGIC **Question**: What other reserved keywords have you seen?  
+# MAGIC Hint: See the python docs on Lexical analysis, section 2.3.1, <a href="http://docs.python.org/reference/lexical_analysis.html#keywords" target="_blank">Keywords</a>
+# MAGIC 
+# MAGIC **Question**: How are reserved kewords like **`assert`** different from **`print`** and **`type`**?
+# MAGIC 
+# MAGIC **Question**: Which data types were you introduced to in this lesson?
+# MAGIC 
+# MAGIC **Question**: What functions were you introduced to in this lesson?
 
 # COMMAND ----------
 
