@@ -8,14 +8,14 @@
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC # Methods, Functions, Packages
+# MAGIC # Methods, Functions &amp; Packages
 # MAGIC 
-# MAGIC ## ![Spark Logo Tiny](https://files.training.databricks.com/images/105/logo_spark_tiny.png) In this lesson you:<br><br>
-# MAGIC * Define and use functions to reuse, not repeat code
+# MAGIC ## In this lesson you:
+# MAGIC * Define and use functions
 # MAGIC   * with and without arguments
 # MAGIC   * with and without type hints
-# MAGIC * Use assert() statements to "unit test" functions
-# MAGIC * Call the `help()` function to learn about modules, functions, classes, and keywords
+# MAGIC * Use **`assert`** statements to "unit test" functions
+# MAGIC * Employ the **`help()`** function to learn about modules, functions, classes, and keywords
 # MAGIC * Identify differences between functions and methods
 # MAGIC * Import libraries
 # MAGIC    
@@ -23,12 +23,17 @@
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC ### Functions
+# MAGIC ##![Spark Logo Tiny](https://files.training.databricks.com/images/105/logo_spark_tiny.png) Functions
 # MAGIC 
 # MAGIC In this lesson, we're going to see how we can use functions to make code reusable.
 # MAGIC 
-# MAGIC Let's start with a simple example:<br>
-# MAGIC We know that we can use Python to do math. The modulo operator returns the remainder of a division. The code below returns 0 becuase 42 is even, so this division has no remainder.
+# MAGIC Let's start with a simple example:
+# MAGIC 
+# MAGIC We know that we can use Python to do math.
+# MAGIC 
+# MAGIC The modulo operator returns the remainder of a division.
+# MAGIC 
+# MAGIC The code below returns 0 becuase 42 is even, so this division has no remainder.
 
 # COMMAND ----------
 
@@ -48,70 +53,125 @@
 # MAGIC %md
 # MAGIC If we want to determine whether a whole bunch of numbers are even or odd, we can package this same code into a **function**. 
 # MAGIC 
-# MAGIC A [function](https://www.w3schools.com/python/python_functions.asp) is created with the `def` keyword, followed by the name of the function, any parameters in parentheses, and a colon.
+# MAGIC A <a href="https://docs.python.org/3/tutorial/controlflow.html#defining-functions" target="_blank">function</a> is created with the **`def`** keyword, followed by the name of the function, any parameters (variables) in parentheses, and a colon.
 
 # COMMAND ----------
 
 # General syntax
 # def function_name(parameter_name):
+#   """Optional doc string explaining the function"""
 #   block of code that is run every time function is called
 
 # defining the function
-def evenOdd(num):
-  """Optional doc string explaining the function"""
+def printEvenOdd(num):
+  """Prints the string "even", "odd", or "UNKNOWN"."""
+  
   if num % 2 == 0:
      print("even")
-  if num % 2 == 1:
+  elif num % 2 == 1:
      print("odd")
   else:
      print("UNKNOWN")
 
 # execute the function by passing it a number
-evenOdd(42)
+printEvenOdd(42)
 
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC The one problem with printing the result is that if you assign it back to a variable, the variable is a None datatype (the output of print, versus the output of the function).
+# MAGIC The one problem with printing the result is that if you assign the function's result back to a variable, the value is **`None`**.
 # MAGIC 
-# MAGIC Instead, use the `return` keyword.
+# MAGIC As we see here:
+
+# COMMAND ----------
+
+result = printEvenOdd(42)
+print(f"The result is: {result}")
+
+# COMMAND ----------
+
+# MAGIC %md To make the function more useful, we can instead introduce a **`return`** expression.
+# MAGIC 
+# MAGIC This directs the method to stop execution of the method and to "return" the specified value
 
 # COMMAND ----------
 
 def evenOdd(num):
-  """Returns the string even, odd, or unknown"""
+  """Returns the string "even", "odd", or "UNKNOWN"."""
+  
   if num % 2 == 0:
     return "even"
-  if num % 2 == 1:
+  elif num % 2 == 1:
     return "odd"
   else:
     return "UNKNOWN"
 
 # execute the function by passing it a number
-evenOdd(42)
+result = evenOdd(42)
+print(f"The result is: {result}")
 
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC A best practice is to create a "unit" test to verify our function.<br>
-# MAGIC An "AssertionError:" will only display if the function returns something that is not expected.
-
-# COMMAND ----------
-
-assert "odd" == evenOdd(101)
-assert "even" == evenOdd(400)
-assert "odd" == evenOdd(5)
-assert "even" == evenOdd(2)
-assert "even" == evenOdd(3780)
-assert "odd" == evenOdd(78963)
-assert "UNKNOWN" == evenOdd(1/3)
-
-# COMMAND ----------
-
-# MAGIC %md
-# MAGIC ###Help Function
+# MAGIC ##![Spark Logo Tiny](https://files.training.databricks.com/images/105/logo_spark_tiny.png) Testing Functions
 # MAGIC 
-# MAGIC The python `help()` function can display the additional information on modules, functions, classes, and keywords.
+# MAGIC When developing functions like this, it's is best practice to test them with various inputs, expecting different outputs.
+# MAGIC 
+# MAGIC This is commonly refered to as **Unit Testing** - testing a "unit" of code.
+# MAGIC 
+# MAGIC To do that, we can employ the **`assert`** expression as seen in the previous lesson.
+# MAGIC 
+# MAGIC If a test fails, execution will stop and an alert (**AssertionError**) will be rended to the console.
+# MAGIC 
+# MAGIC To see this in action, alter the code below so that the various assertions fail.
+
+# COMMAND ----------
+
+result = evenOdd(101)
+assert "odd" == result, f"Expected odd, found {result}"
+print("Test #1 passed")
+
+result = evenOdd(400)
+assert "even" == result, f"Expected even, found {result}"
+print("Test #2 passed")
+
+result = evenOdd(5)
+assert "odd" == result, f"Expected odd, found {result}"
+print("Test #3 passed")
+
+result = evenOdd(2)
+assert "even" == result, f"Expected even, found {result}"
+print("Test #4 passed")
+
+result = evenOdd(3780) 
+assert "even" == result, f"Expected even, found {result}"
+print("Test #5 passed")
+
+result = evenOdd(78963)
+assert "odd" == result, f"Expected odd, found {result}"
+print("Test #6 passed")
+
+# A slighly more robust version:
+value = 1/3
+expected = "UNKNOWN"
+result = evenOdd(value)
+assert expected == result, f"Expected {expected}, found {result} for {value}"
+print("Test #7 passed")
+
+# COMMAND ----------
+
+# MAGIC %md The secret to unit testing is two fold:
+# MAGIC * Write your code so that it is testable - a whole other topic in and of itself.
+# MAGIC * Provide as much information as reasonable in the assertion - in most cases you will be looking at a report of failures and not the code itself.
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC ##![Spark Logo Tiny](https://files.training.databricks.com/images/105/logo_spark_tiny.png) The Help Functions
+# MAGIC 
+# MAGIC The <a href="https://docs.python.org/3/library/functions.html#help" target="_blank">help()</a> function can display additional information the functions you develop.
+# MAGIC 
+# MAGIC It relies in large part on the documentation string provided at the top of a function, for example:
 
 # COMMAND ----------
 
@@ -119,18 +179,133 @@ help(evenOdd)
 
 # COMMAND ----------
 
-# MAGIC %md
-# MAGIC ### Passing in Multiple Arguments<br>
-# MAGIC Functions can accept more than one argument.<br>
-# MAGIC Our function works well for English, now let's modify our function to make it easy to localize for different languages by accepting two arguments for the local version of even and odd.
+# MAGIC %md A properly documented function will include information on:
+# MAGIC * The parameters
+# MAGIC * The parameter's data types
+# MAGIC * The return value
+# MAGIC * The return value's data type
+# MAGIC * A one-line description
+# MAGIC * Possibly a more verbose description
+# MAGIC * Example usage
+# MAGIC * and more...
 
 # COMMAND ----------
 
-def evenOddInt(num, even, odd):
+def documentedEvenOdd(num):
+  """
+  Returns the string "even", "odd", or "UNKNOWN".
+  
+  This would be a more verbose description of 
+  what this function might do and could drone 
+  one for quite a while
+  
+  Args:
+    num (int): The number to be tested as even or odd
+    
+  Returns:
+    str: "even" if the number is even, "odd" if the number is odd or "UNKNOWN"
+    
+  Examples:
+    evenOdd(32)
+    evenOdd(13)
+  """
+    
   if num % 2 == 0:
-    return even
-  if num % 2 == 1:
-    return odd
+    return "even"
+  elif num % 2 == 1:
+    return "odd"
+  else:
+    return "UNKNOWN"
+
+# COMMAND ----------
+
+help(documentedEvenOdd)
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC ##![Spark Logo Tiny](https://files.training.databricks.com/images/105/logo_spark_tiny.png) Functions Arguments
+# MAGIC 
+# MAGIC Obviously, functions can accept more than one argument.
+# MAGIC 
+# MAGIC Our function takes only one argument and works well for English.
+# MAGIC 
+# MAGIC Now let's modify our function to make it easy to localize for different languages by accepting two additional arguments for the local version of "even" and "odd".
+
+# COMMAND ----------
+
+def evenOddInt(num, evenLabel, oddLabel):
+  if num % 2 == 0:
+    return evenLabel
+  elif num % 2 == 1:
+    return oddLabel
+  else:
+    return "UNKNOWN"
+
+# execute the function by passing it a number and two labels
+print( evenOddInt(41, "even", "odd") )
+print( evenOddInt(42, "even", "odd") )
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC A new set of unit tests can verify that our new function works as expected.
+# MAGIC 
+# MAGIC And because a unit tests is just more code, we can wrap that up in a test-function as well.
+
+# COMMAND ----------
+
+def testEvenOddInt(value, evenLabel, oddLabel, expected):
+  result = evenOddInt(value, evenLabel, oddLabel)
+  
+  assert expected == result, f"Expected {expected}, found {result} for {value}"
+  print(f"Test {value}/{evenLabel}/{oddLabel} passed")
+
+# COMMAND ----------
+
+# MAGIC %md With the test functiond defined, testing many permutations gets even easier.
+
+# COMMAND ----------
+
+# Test our "UNKNOWN" case
+testEvenOddInt(1/3, "what", "ever", "UNKNOWN")
+
+# Test around zero
+testEvenOddInt(-1, "even", "odd", "odd")
+testEvenOddInt(0, "even", "odd", "even")
+testEvenOddInt(1, "even", "odd", "odd")
+testEvenOddInt(2, "even", "odd", "even")
+testEvenOddInt(3, "even", "odd", "odd")
+
+# Additional tests focused on the even/odd labels
+testEvenOddInt(400, "pair", "impair", "pair")
+testEvenOddInt(5, "zυγός", "περιττός", "περιττός")
+testEvenOddInt(2, "gerade", "ungerade", "gerade")
+testEvenOddInt(3780, "genap", "ganjil", "genap")
+testEvenOddInt(78963, "sudé", "liché", "liché")
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC ##![Spark Logo Tiny](https://files.training.databricks.com/images/105/logo_spark_tiny.png) Type Hints
+# MAGIC 
+# MAGIC Type hinting allows us to indicate the argument and return type of a function.
+# MAGIC 
+# MAGIC This is done by appending a colon and data type to the end of each parameter.
+# MAGIC * For example **`num`** would become **`num:int`**.
+# MAGIC 
+# MAGIC The return type is documented by adding an "arrow" and data type to the end of a function.
+# MAGIC  * For example, **`def someFunc():`** would become **`def someFunc() -> str:`** to indicate that it returns a string.
+# MAGIC  
+# MAGIC We can see below how our **`evenOddInt()`** function would look with type parameters.
+
+# COMMAND ----------
+
+def evenOddInt(num:int, evenLabel:str, oddLabel:str) -> str:
+  if num % 2 == 0:
+    return evenLabel
+  elif num % 2 == 1:
+    return oddLabel
   else:
     return "UNKNOWN"
 
@@ -140,67 +315,199 @@ evenOddInt(42, "even", "odd")
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC A new "unit" test can verify our function.<br>
-# MAGIC If you know more than one language feel free edit the code below for a different version of even and odd.
+# MAGIC But there is a catch!
+# MAGIC 
+# MAGIC Python is dynamically-typed language, so even if you decalre a parameter to be a string, there is little to nothing stoping you from passing other data types to that function.
+# MAGIC 
+# MAGIC For example....
 
 # COMMAND ----------
 
-assert "odd" == evenOddInt(101, "even", "odd")
-assert "pair" == evenOddInt(400, "pair", "impair")
-assert "περιττός" == evenOddInt(5, "zυγός", "περιττός")
-assert "gerade" == evenOddInt(2, "gerade", "ungerade")
-assert "genap" == evenOddInt(3780, "genap", "ganjil")
-assert "liché" == evenOddInt(78963, "sudé", "liché")
-assert "UNKNOWN" == evenOddInt(1/3, "xx", "xx")
+resultA = evenOddInt(12, "EVEN", "ODD")
+print(f"""The result is "{resultA}" and of type {type(resultA)}""")
+
+resultB = evenOddInt(13, True, False)
+print(f"""The result is "{resultB}" and of type {type(resultB)}""")
+
+resultC = evenOddInt(17, 1, 0)
+print(f"""The result is "{resultC}" and of type {type(resultC)}""")
 
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC ###Type Hints<br>
-# MAGIC Functions can be more strongly typed. Type hinting allows us to indicate the argument and return type.<br>
-# MAGIC This is done by adding a colon space and data type to the parameter like below. <br>
-# MAGIC `num: int`<br>
-# MAGIC The return type is indicated with a hyphen, greater than and data type before the colon at the end of the signature line.<br>
-# MAGIC `-> str:`
+# MAGIC **Question:** If type hints are not inforced in Python, then why provide them?
 
 # COMMAND ----------
 
-def evenOddInt(num: int, even: str, odd: str) -> str:
+# MAGIC %md
+# MAGIC **Question:** If type hints won't stop callers of my function from passing the wrong value, what can I do?<br/>
+# MAGIC Hint: Consider the following version of our even/odd method:
+
+# COMMAND ----------
+
+def evenOddInt(num:int, evenLabel:str, oddLabel:str) -> str:
+  # What can one do to protect a function from bad input?
+  
   if num % 2 == 0:
-    return even
-  if num % 2 == 1:
-    return odd
+    return evenLabel
+  elif num % 2 == 1:
+    return oddLabel
   else:
     return "UNKNOWN"
 
-# execute the function by passing it a number
-evenOddInt(42, "even", "odd")
+# This should always work
+print( evenOddInt(12, "EVEN", "ODD") )
+
+# But can we stop this code from executing?
+print( evenOddInt(13, True, False) )
+print( evenOddInt(17, 1, 0) )
 
 # COMMAND ----------
 
 # MAGIC %md
+# MAGIC ##![Spark Logo Tiny](https://files.training.databricks.com/images/105/logo_spark_tiny.png) Default Values
+# MAGIC 
+# MAGIC Assuming 90% of the callers of this function expect to use English, requiring them to specify the **`evenLabel`** and **`oddLabel`** everytime is cumbersome.
+# MAGIC 
 # MAGIC We can improve our function further by adding default values for even and odd so these two arguments are not needed for English.
 
 # COMMAND ----------
 
-def evenOddInt(num: int, even: str = "even", odd: str = "odd") -> str:
+def evenOddInt(num: int, evenLabel:str = "even", oddLabel:str = "odd") -> str:
   if num % 2 == 0:
-    return even
-  if num % 2 == 1:
-    return odd
+    return evenLabel
+  elif num % 2 == 1:
+    return oddLabel
   else:
     return "UNKNOWN"
 
 # execute the function by passing it a number
-evenOddInt(42)
+print(evenOddInt(42))
+print(evenOddInt(32, "EVEN", "ODD"))
+print(evenOddInt(65, "pair", "impair"))
 
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC ### Methods
+# MAGIC Of course we now need to update our unit tests to account for the fact that we now have default values.
 # MAGIC 
-# MAGIC In Python a Method refers to a special kind of function that is applied to an object. <br>
-# MAGIC Below we create a string object called name and print it.
+# MAGIC But we can save that for a later date.
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC ##![Spark Logo Tiny](https://files.training.databricks.com/images/105/logo_spark_tiny.png) Named Arguments
+# MAGIC 
+# MAGIC By default, Python assignes a value to a parameter based on its ordinal value.
+# MAGIC 
+# MAGIC In the previous example, the first value is assigned to the **`num`** parameter, the second value to the **`evenLabel`** parameter, and so on.
+# MAGIC 
+# MAGIC Alternatively, you can name the arguments as the function is called - note that the order no longer matters.
+
+# COMMAND ----------
+
+def evenOddInt(num: int, evenLabel:str = "even", oddLabel:str = "odd") -> str:
+  if num % 2 == 0:
+    return evenLabel
+  elif num % 2 == 1:
+    return oddLabel
+  else:
+    return "UNKNOWN"
+
+# execute the function by passing it a number
+print(evenOddInt(42, oddLabel="impair", evenLabel="pair"))
+print(evenOddInt(evenLabel="EVEN", oddLabel="ODD", num=32))
+print(evenOddInt(oddLabel="ganjil", num=3780, evenLabel="genap"))
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC Hint: Calling a function that has 3+ aruments can make your code far more readable.
+# MAGIC 
+# MAGIC Compare the two examples:
+# MAGIC 
+# MAGIC **`db.record("Mike", "Smith", 32, 1695, "Plummer Dr", 75087)`**
+# MAGIC 
+# MAGIC **`db.record(first="Mike", last="Smith", age=32, house_num=1695, street="Plummer Dr", zip=75087)`**
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC ##![Spark Logo Tiny](https://files.training.databricks.com/images/105/logo_spark_tiny.png) Arbitrary Arguments
+# MAGIC 
+# MAGIC You can define a function in Python that accepts an arbitrary number of arguments with syntax like this:
+# MAGIC 
+# MAGIC ```
+# MAGIC def my_func(*args):
+# MAGIC   ...
+# MAGIC ```
+# MAGIC 
+# MAGIC The parameter name **`args`** is not required, but it is a common convention.
+# MAGIC 
+# MAGIC The **`args`** parameter is treated as a sequence containing all of the arguments passed to the function.
+
+# COMMAND ----------
+
+def sum(*args):
+  total = 0
+  for value in args:
+    total += value
+  return total
+
+sum_a = sum(1, 2, 3, 4, 5)
+sum_b = sum(32, 123, -100, 9)
+sum_c = sum(13)
+sum_d = sum()
+
+print(f"Example A: {sum_a}")
+print(f"Example B: {sum_b}")
+print(f"Example C: {sum_c}")
+print(f"Example D: {sum_d}")
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC ##![Spark Logo Tiny](https://files.training.databricks.com/images/105/logo_spark_tiny.png) Arbitrary Keyword Arguments
+# MAGIC 
+# MAGIC A Python function can also accept arbitrary named arguments, which are referred to as _keyword arguments_, with syntax like this:
+# MAGIC 
+# MAGIC ```
+# MAGIC def my_func(**kwargs):
+# MAGIC   ...
+# MAGIC ```
+# MAGIC 
+# MAGIC The parameter name `kwargs` is not required, but it is a common convention. 
+# MAGIC 
+# MAGIC The `kwargs` parameter is treated as a dictionary containing all of the argument names and values passed to the function.
+# MAGIC 
+# MAGIC We will talk more about dictionaries in the next lesson.
+
+# COMMAND ----------
+
+def my_func(**kwargs):
+  print("Arguments received:")
+  for key in kwargs:
+    value = kwargs[key]
+    print(f"  {key:15s} = {value}")
+  print()
+
+my_func(first_name="Jeff", last_name="Lebowski", drink="White Russian")
+
+my_func(movie_title="The Big Lebowski", release_year=1998)
+
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC ##![Spark Logo Tiny](https://files.training.databricks.com/images/105/logo_spark_tiny.png) Methods
+# MAGIC 
+# MAGIC In Python, a Method refers to a special kind of function that is applied to an object.
+# MAGIC 
+# MAGIC We will talk more about objects and classes in a later lesson, but for now, consdier that:
+# MAGIC * A function only operates on the parameters passed to it (generally).
+# MAGIC * A method has parameters, but it also has additional state as defined by the object it is attached to.
+# MAGIC 
+# MAGIC For example, a string (**`str`**) is a type of object:
 
 # COMMAND ----------
 
@@ -210,28 +517,49 @@ print(name)
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC Next we apply the upper() method to name.
+# MAGIC The string object has a method called **`upper()`** which we can invoke.
 
 # COMMAND ----------
 
-print(name.upper())
+result = name.upper()
+print(result)
+
+# COMMAND ----------
+
+# MAGIC %md Note that the original object was not modified, but that the **`upper()`** method used the string to produce a new string.
+
+# COMMAND ----------
+
+print(name)
 
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC Certain methods expect an argument.<br>
-# MAGIC Below we pass in `a` as an argument to the count() method and it returns the count of number of times `a` is found in the string 
-
-# COMMAND ----------
-
-print(name.count('a'))
-
-# COMMAND ----------
-
-# MAGIC %md
-# MAGIC ### Libraries
+# MAGIC As with functions, certain methods expect an argument.
 # MAGIC 
-# MAGIC You can also use additional libraries when working with Python, such as [numpy](https://numpy.org/doc/stable/). Numpy is pre-installed on the Databricks runtime. You will need to first `import` numpy.
+# MAGIC The string class also has a **`count(str)`** method that returns the total number of times the specified substring is found.
+# MAGIC 
+# MAGIC In this case, let's count how many times we find the letter **`a`**.
+
+# COMMAND ----------
+
+total = name.count('a')
+print(f"I found {total} instances of that substring")
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC ##![Spark Logo Tiny](https://files.training.databricks.com/images/105/logo_spark_tiny.png) Libraries
+# MAGIC 
+# MAGIC Python includes a rich set of libraries developed by an every going community of software develoeprs.
+# MAGIC 
+# MAGIC Some libraries are included with Python by default.
+# MAGIC 
+# MAGIC Others are external libraries that have to be "installed".
+# MAGIC 
+# MAGIC One such library is <a href="https://numpy.org/doc/stable" target="_blank">NumPy</a> - while a 3rd-party library, NumPy is pre-installed on the Databricks runtime.
+# MAGIC   
+# MAGIC To use any library, you need to first import it into the current name space:
 
 # COMMAND ----------
 
@@ -241,12 +569,18 @@ numpy.sqrt(9)
 
 # COMMAND ----------
 
+# MAGIC %md As with other functions, we can use the **`help()`** function on **`numpy.sqrt`** to get more information.
+
+# COMMAND ----------
+
 help(numpy.sqrt)
 
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC You can also change the name of the library when you import it, such as:
+# MAGIC You can also change the name of the library when you import it.
+# MAGIC 
+# MAGIC This can be handy when the code gets too verbose and abreviating or renaming the imported object makes the code easier to read.
 
 # COMMAND ----------
 
@@ -257,14 +591,17 @@ np.sqrt(12)
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC Or if you want to import every function from numpy, you can use the wildcard `*`
+# MAGIC And instead of importing just one function at a time, you can import every function from the NumPy package using the wildcard **`*`**.
+# MAGIC 
+# MAGIC Caution: importing too many things into the same name space can create confusion.
+# MAGIC * Are you using Python's **`count()`** function? Databricks' **`count()`**? NumPy's **`count()`** function?
 
 # COMMAND ----------
 
 from numpy import *
 
 sqrt(12)
-
+absolute(-123)
 
 # COMMAND ----------
 

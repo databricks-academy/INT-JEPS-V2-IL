@@ -1,5 +1,9 @@
 # Just Enough Python for  Spark
 
+## Version 2.0.3 (9-25-2020)
+* Updated/refreshed topics for teachability & correctness
+* Updated labs to provide clearer guidence to students
+
 ## Version 2.0.2 (9-22-2020)
 * Removed extranious notebooks from solutions folder
 * Minor notebook renaming to follow standards
