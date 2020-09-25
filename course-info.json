@@ -1,6 +1,6 @@
 {
-  "published_on": "Sep 21, 2020",
-  "requirements": "Any databricks workspace",
+  "published_on": "See GitHub",
+  "requirements": "DBR 7.x; Python 3",
   "developer": {
     "name": "Jacob Parr",
     "email": "jacob.parr@databricks.com",
