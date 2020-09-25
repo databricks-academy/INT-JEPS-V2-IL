@@ -8,9 +8,18 @@
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC # Collections Lab
+# MAGIC # Collections Lab - Word Count
 # MAGIC 
-# MAGIC Write a function named `item_count` that accepts a list of values and returns a dictionary with a count of the number of times each unique value appeared in the list. For example, `item_count(['a', 'b', 'a'])` should return the dictionary `{'a': 2, 'b': 1}`
+# MAGIC Write a function that accepts a list of values and returns a dictionary with a count of the number of times each unique value appeared in the list.
+# MAGIC 0. The name of the function should be **`item_count`**
+# MAGIC 0. The function should have one parameter that is a list of values.
+# MAGIC 0. The function should return a diction where:
+# MAGIC   * The dictionary-key is the original value from the list
+# MAGIC   * The dictionary-value is the number of times the corresponding value appeared in the list.
+# MAGIC 
+# MAGIC For example, **`item_count(['a', 'b', 'a'])`** should return the dictionary **`{'a': 2, 'b': 1}`**
+# MAGIC 
+# MAGIC Hint: For every value, you will need to first test the dictionary to see if you already have a count for that value or not.
 
 # COMMAND ----------
 
@@ -33,7 +42,9 @@ def item_count(input_list):
 # MAGIC %md
 # MAGIC ##![Spark Logo Tiny](https://s3-us-west-2.amazonaws.com/curriculum-release/images/105/logo_spark_tiny.png) Validate Your Answer
 # MAGIC 
-# MAGIC Once you have implemented and executed your solution, run the following cell to confirm that it produces correct results. It should not raise any errors if you implemented the function correctly.
+# MAGIC Once you have implemented and executed your solution, run the following cell to confirm that it produces correct results.
+# MAGIC 
+# MAGIC It should not raise any errors if you implemented the function correctly.
 
 # COMMAND ----------
 
@@ -42,15 +53,10 @@ empty_count_result = {}
 assert item_count(empty_list) == empty_count_result
 
 breakfast_list = ["pancake", "egg", "egg", "pancake", "coffee", "pancake"]
-breakfast_count_result = {
-  "pancake": 3,
-  "egg": 2,
-  "coffee": 1,
-}
+breakfast_count_result = {"pancake": 3, "egg": 2, "coffee": 1, }
 assert item_count(breakfast_list) == breakfast_count_result
 
 print("Congratulations! All tests passed.")
-
 
 # COMMAND ----------
 

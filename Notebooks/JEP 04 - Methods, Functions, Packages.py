@@ -396,6 +396,109 @@ print(evenOddInt(65, "pair", "impair"))
 # COMMAND ----------
 
 # MAGIC %md
+# MAGIC ##![Spark Logo Tiny](https://files.training.databricks.com/images/105/logo_spark_tiny.png) Named Arguments
+# MAGIC 
+# MAGIC By default, Python assignes a value to a parameter based on its ordinal value.
+# MAGIC 
+# MAGIC In the previous example, the first value is assigned to the **`num`** parameter, the second value to the **`evenLabel`** parameter, and so on.
+# MAGIC 
+# MAGIC Alternatively, you can name the arguments as the function is called - note that the order no longer matters.
+
+# COMMAND ----------
+
+def evenOddInt(num: int, evenLabel:str = "even", oddLabel:str = "odd") -> str:
+  if num % 2 == 0:
+    return evenLabel
+  elif num % 2 == 1:
+    return oddLabel
+  else:
+    return "UNKNOWN"
+
+# execute the function by passing it a number
+print(evenOddInt(42, oddLabel="impair", evenLabel="pair"))
+print(evenOddInt(evenLabel="EVEN", oddLabel="ODD", num=32))
+print(evenOddInt(oddLabel="ganjil", num=3780, evenLabel="genap"))
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC Hint: Calling a function that has 3+ aruments can make your code far more readable.
+# MAGIC 
+# MAGIC Compare the two examples:
+# MAGIC 
+# MAGIC **`db.record("Mike", "Smith", 32, 1695, "Plummer Dr", 75087)`**
+# MAGIC 
+# MAGIC **`db.record(first="Mike", last="Smith", age=32, house_num=1695, street="Plummer Dr", zip=75087)`**
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC ##![Spark Logo Tiny](https://files.training.databricks.com/images/105/logo_spark_tiny.png) Arbitrary Arguments
+# MAGIC 
+# MAGIC You can define a function in Python that accepts an arbitrary number of arguments with syntax like this:
+# MAGIC 
+# MAGIC ```
+# MAGIC def my_func(*args):
+# MAGIC   ...
+# MAGIC ```
+# MAGIC 
+# MAGIC The parameter name **`args`** is not required, but it is a common convention.
+# MAGIC 
+# MAGIC The **`args`** parameter is treated as a sequence containing all of the arguments passed to the function.
+
+# COMMAND ----------
+
+def sum(*args):
+  total = 0
+  for value in args:
+    total += value
+  return total
+
+sum_a = sum(1, 2, 3, 4, 5)
+sum_b = sum(32, 123, -100, 9)
+sum_c = sum(13)
+sum_d = sum()
+
+print(f"Example A: {sum_a}")
+print(f"Example B: {sum_b}")
+print(f"Example C: {sum_c}")
+print(f"Example D: {sum_d}")
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC ##![Spark Logo Tiny](https://files.training.databricks.com/images/105/logo_spark_tiny.png) Arbitrary Keyword Arguments
+# MAGIC 
+# MAGIC A Python function can also accept arbitrary named arguments, which are referred to as _keyword arguments_, with syntax like this:
+# MAGIC 
+# MAGIC ```
+# MAGIC def my_func(**kwargs):
+# MAGIC   ...
+# MAGIC ```
+# MAGIC 
+# MAGIC The parameter name `kwargs` is not required, but it is a common convention. 
+# MAGIC 
+# MAGIC The `kwargs` parameter is treated as a dictionary containing all of the argument names and values passed to the function.
+# MAGIC 
+# MAGIC We will talk more about dictionaries in the next lesson.
+
+# COMMAND ----------
+
+def my_func(**kwargs):
+  print("Arguments received:")
+  for key in kwargs:
+    value = kwargs[key]
+    print(f"  {key:15s} = {value}")
+  print()
+
+my_func(first_name="Jeff", last_name="Lebowski", drink="White Russian")
+
+my_func(movie_title="The Big Lebowski", release_year=1998)
+
+
+# COMMAND ----------
+
+# MAGIC %md
 # MAGIC ##![Spark Logo Tiny](https://files.training.databricks.com/images/105/logo_spark_tiny.png) Methods
 # MAGIC 
 # MAGIC In Python, a Method refers to a special kind of function that is applied to an object.

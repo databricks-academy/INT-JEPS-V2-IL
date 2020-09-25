@@ -8,43 +8,34 @@
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC # Fizz Buzz Lab
-# MAGIC  
-# MAGIC * If the number is divisible by 3 print `Fizz`. If the number is divisible by 5 print `Buzz`. If it is divisible by both 3 and 5 print `FizzBuzz` on one line.
-# MAGIC * If the number is not divisible by 3 or 5, just print the number.
+# MAGIC # Fizz Buzz Test
 # MAGIC 
-# MAGIC HINT: Look at the [modulo (`%`) operator](https://www.educative.io/edpresso/what-is-a-modulo-operator-in-python).
+# MAGIC The Fizz-Buzz test was invted by Imran Ghory to test candiates applying for various software development roles.
+# MAGIC 
+# MAGIC You can find out more about the history of this test by reading the article
+# MAGIC <a href="http://imranontech.com/2007/01/24/using-fizzbuzz-to-find-developers-who-grok-coding/" target="_blank">Using FizzBuzz to Find Developers who Grok Coding</a></br>
+# MAGIC which dates back to January 24, 2007.
+# MAGIC 
+# MAGIC The test, and your challenge, reads as follows:
+# MAGIC 
+# MAGIC > Write a program that prints the numbers from 1 to 100. But for  
+# MAGIC > multiples of three print “Fizz” instead of the number and for the  
+# MAGIC > multiples of five print “Buzz”. For numbers which are multiples  
+# MAGIC > of both three and five print “FizzBuzz”."  
+# MAGIC 
+# MAGIC A couple of hints:
+# MAGIC * You will need a for-loop that itereates over the numbers 0 to 100 inclusive.
+# MAGIC * Inside the loop, you will need a combination of **`if`**, **`elif`** and **`else`** statements.
+# MAGIC * The modulo (**`%`**) operator will give you the cleanest method for testing for divisability by 3 and 5.
+# MAGIC * Start with a short list, say 1 to 15, during your initial development and then scale out to 100 when you think you are ready.
+# MAGIC * Don't worry about how pretty your code is - there are many different ways of completing this challenge - all of them are correct, if the output is correct.
 
 # COMMAND ----------
 
 # TODO
 
-# COMMAND ----------
-
-# MAGIC %md
-# MAGIC What happens if you pass in a string here? It will error! Add in a check so that if the input is not numeric (either `float` or `int`) print `Not a number`.
-# MAGIC 
-# MAGIC HINT: Use [type()](https://www.w3schools.com/python/ref_func_type.asp).
-
-# COMMAND ----------
-
-# TODO
-
-# COMMAND ----------
-
-# MAGIC %md
-# MAGIC But what if the argument passed to the function were a list of values? Write a function that accepts a list of inputs, and applies the function to each element in the list.
-# MAGIC 
-# MAGIC A sample list is provided below to test your function.
-
-# COMMAND ----------
-
-num_list = [1, 1.56, 3, 5, 15, 30, 50, 77, "Hello"]
-
-# COMMAND ----------
-
-# TODO
-
+for FILL_IN
+  if FILL_IN
 
 # COMMAND ----------
 
