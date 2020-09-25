@@ -10,13 +10,12 @@
 # MAGIC %md
 # MAGIC # Variables and Data Types
 # MAGIC 
-# MAGIC ## ![Spark Logo Tiny](https://files.training.databricks.com/images/105/logo_spark_tiny.png) In this lesson you:<br><br>
-# MAGIC 
-# MAGIC - Use given examples to explore fundamental concepts in Python, such as: 
-# MAGIC     * Data types
-# MAGIC     * Variables
-# MAGIC     * Printing values
-# MAGIC     * Assert statements
+# MAGIC ## In this lesson you:
+# MAGIC * Explore fundamental Pythopn concepts
+# MAGIC * Are introduced to 4 basic data types
+# MAGIC * Declare and assign variables
+# MAGIC * Employ simple, built-in functions such as **`print()`** and **`type()`**
+# MAGIC * Develop and use **`assert`** statements
 # MAGIC  
 
 # COMMAND ----------
@@ -51,39 +50,38 @@ print("Step 3") # This is the last step
 
 # MAGIC %md
 # MAGIC ##![Spark Logo Tiny](https://files.training.databricks.com/images/105/logo_spark_tiny.png) Numbers &amp; Basic Mathematical Operators
-# MAGIC Run the following cell and note it's output
+# MAGIC Run the following three cells and note their output:
 
 # COMMAND ----------
 
-True # This is a boolean data type
+True # This is a boolean data type (1/0, true/false, on/off)
 
 # COMMAND ----------
 
-# MAGIC %md The Python interpreter will (by default) print the result of the last operation to the console.
+37 # This is whole number (or integer)
+
+# COMMAND ----------
+
+3.14159265359 # This is a floating-point number
+
+# COMMAND ----------
+
+# MAGIC %md The Python interpreter will (by default) render the result of the last operation on the console.
 # MAGIC 
-# MAGIC We can see that in the rendereding of **`Out[1]: True`** above.
+# MAGIC We can see that in the rendereding of **`Out[1]: True`**, **`Out[2]: 37`**, and **`Out[3]: 3.14159265359`** above.
 # MAGIC 
 # MAGIC We can leverage that feature to perform some basic mathimatical operations on various numbers.
+# MAGIC 
+# MAGIC Give it a quick try:
+# MAGIC * Addition (**`+`**)
+# MAGIC * Subtraction (**`-`**)
+# MAGIC * Multiplication  (**`*`**)
+# MAGIC * Division (**`/`**)
+# MAGIC * Modulo (**`%`**)
 
 # COMMAND ----------
 
-1 + 1
-
-# COMMAND ----------
-
-3.0 - 0.5
-
-# COMMAND ----------
-
-4 * 8
-
-# COMMAND ----------
-
-24 / 5
-
-# COMMAND ----------
-
-15 % 3
+27 + 3
 
 # COMMAND ----------
 
@@ -117,7 +115,8 @@ with multiple lines"""
 
 # COMMAND ----------
 
-# MAGIC %md What mistake did we make in concatenating those three strings?
+# MAGIC %md 
+# MAGIC **Question:** What mistake did we make in concatenating those three strings?
 
 # COMMAND ----------
 
@@ -141,36 +140,47 @@ with multiple lines"""
 
 # COMMAND ----------
 
-type(True)
+# The first of two possible boolean values
+type(True) 
 
 # COMMAND ----------
 
-type(False)
+# The second of two possible boolean values
+type(False) 
 
 # COMMAND ----------
 
-type(132)
+# A whole number, or integer
+type(132) 
 
 # COMMAND ----------
 
-type(34.62)
+# A floating point number
+type(34.62) 
 
 # COMMAND ----------
 
-type('A single quote string')
+# A single-quote string
+type('A single quote string') 
 
 # COMMAND ----------
 
-type("A double quote string")
+# A double-quote string
+type("A double quote string") 
 
 # COMMAND ----------
 
-type("""A tripple quote string""")
+# A tripple quote string
+type("""A tripple quote string""") 
 
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC Can you predict which type this will produce?
+# MAGIC Can you predict which type the next command will produce?
+# MAGIC * **`bool`**
+# MAGIC * **`int`**
+# MAGIC * **`float`**
+# MAGIC * **`str`**
 
 # COMMAND ----------
 
@@ -220,11 +230,11 @@ _BEST_FOOD = "brussel sprouts"
 # MAGIC %md
 # MAGIC ##![Spark Logo Tiny](https://files.training.databricks.com/images/105/logo_spark_tiny.png) The Print Function
 # MAGIC 
-# MAGIC We can force Python to render output to the console by using the [print()](https://www.w3schools.com/python/ref_func_print.asp) function.
+# MAGIC We can force Python to render output to the console by using the <a href="https://docs.python.org/3/library/functions.html#print" target="_blank">print</a> function.
 # MAGIC 
-# MAGIC We already saw this early in the statement **`print("Hello world")`**
+# MAGIC We already saw this in an earlier statement: **`print("Hello world!")`**
 # MAGIC 
-# MAGIC We can employ it here to print the three variables we just declared.
+# MAGIC The **`print()`** function is one of many <a href="https://docs.python.org/3/library/functions.html" target="_blank">Built-in Functions</a> and we can employ it here to print the four variables we just declared.
 
 # COMMAND ----------
 
@@ -250,12 +260,13 @@ print(best_food)
 # COMMAND ----------
 
 # Without f-strings, we have to concatenate the values
-text = "The best food ever is " + best_food + ", especially when it's hot outside!"
+text = "The best food ever is" + best_food + ", especially when it's hot outside!"
 print(text)
 
 # COMMAND ----------
 
 # With f-strings, we can "inject" the variable directly into the string
+# Additionally certain types of bugs are easier to catch at a quick glance
 text = f"The best food ever is {best_food}, especially when it's hot outside!"
 print(text)
 
@@ -289,7 +300,12 @@ print(f"The best food ever is {best_food}, especially when it's hot outside!")
 
 # MAGIC %md Both the **`==`** opeartor and the **`!=`** operator return a boolean value as seen above.
 # MAGIC 
-# MAGIC Other common comparison operators include:
+# MAGIC Other common comparison <a href="https://docs.python.org/3/reference/lexical_analysis.html#operators" target="_blank">operators</a> include:
+# MAGIC * **`>`** greater than
+# MAGIC * **`<`** les than
+# MAGIC * **`>=`** greater than or equal to
+# MAGIC * **`<=`** less than or equal to
+# MAGIC * ...and many more
 
 # COMMAND ----------
 
@@ -297,22 +313,10 @@ print(f"The best food ever is {best_food}, especially when it's hot outside!")
 
 # COMMAND ----------
 
-43 < 32
-
-# COMMAND ----------
-
-65 >= 13
-
-# COMMAND ----------
-
-99 <= 99
-
-# COMMAND ----------
-
 # MAGIC %md
 # MAGIC But what if we wanted to test if a value was of a certain type?
 # MAGIC 
-# MAGIC For this we can use the `**type()**` function and combine it with either equality operator as seen here:
+# MAGIC For this we can use the **`type()`** function and combine it with the equality operator (**`==`**) as seen here:
 
 # COMMAND ----------
 
@@ -333,13 +337,13 @@ type(1.32) == float
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC What if you wanted to verify, or assert, a specific precondition.
+# MAGIC What if you wanted to verify, or assert, a specific precondition?
 # MAGIC 
-# MAGIC One example might be the type of a variable, in which case execution should stop if it is of the wrong type.
+# MAGIC One example might be variable's datatype, in which case execution should stop if it is of the wrong type.
 # MAGIC 
-# MAGIC That's exactly what an [assert](https://www.w3schools.com/python/python_ref_keywords.asp) statement allows you to do.
+# MAGIC That's exactly what <a href="http://docs.python.org/reference/lexical_analysis.html#keywords" target="_blank">assert</a> statement allow us to do.
 # MAGIC 
-# MAGIC If the test does not pass, execution stops, and Python prints an error message to the console as demonstrated here:
+# MAGIC If the test, or assertion, does not pass, execution stops and Python prints an error message to the console as demonstrated here:
 
 # COMMAND ----------
 
@@ -367,15 +371,24 @@ print("All done")
 
 # MAGIC %md
 # MAGIC `assert` is a keyword in Python, so make sure you don't declare any variables named **`assert`**!
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC ### ![Spark Logo Tiny](https://files.training.databricks.com/images/105/logo_spark_tiny.png) Review
 # MAGIC 
-# MAGIC **Question**: What other reserved keywords have you seen?  
+# MAGIC **Question**: What mathimatical operators were you introduced to in this lesson?<br/>
+# MAGIC Hint: See the python docs on Lexical analysis, section 2.5, <a href="https://docs.python.org/3/reference/lexical_analysis.html#operators" target="_blank">Operators</a>
+# MAGIC 
+# MAGIC **Question**: What reserved keywords were you introduced to in this lesson?<br/>
 # MAGIC Hint: See the python docs on Lexical analysis, section 2.3.1, <a href="http://docs.python.org/reference/lexical_analysis.html#keywords" target="_blank">Keywords</a>
 # MAGIC 
 # MAGIC **Question**: How are reserved kewords like **`assert`** different from **`print`** and **`type`**?
 # MAGIC 
 # MAGIC **Question**: Which data types were you introduced to in this lesson?
 # MAGIC 
-# MAGIC **Question**: What functions were you introduced to in this lesson?
+# MAGIC **Question**: What functions were you introduced to in this lesson?<br/>
+# MAGIC Hint: See the python docs on <a href="https://docs.python.org/3/library/functions.html" target="_blank">Built-in Functions</a>
 
 # COMMAND ----------
 

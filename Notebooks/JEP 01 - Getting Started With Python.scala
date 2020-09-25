@@ -104,6 +104,20 @@
 
 // COMMAND ----------
 
+// MAGIC %md ##![Spark Logo Tiny](https://files.training.databricks.com/images/105/logo_spark_tiny.png) Databricks Connect
+// MAGIC 
+// MAGIC **Databricks Connect** allows you to connect your favorite IDE (IntelliJ, Eclipse, PyCharm, RStudio, Visual Studio), notebook server (Zeppelin, Jupyter), and other custom applications to Databricks clusters and run Apache Spark code.
+// MAGIC 
+// MAGIC With Databricks Connect, you can:
+// MAGIC * Run large-scale Spark jobs from any Python, Java, Scala, or R application. 
+// MAGIC * Step through and debug code in your IDE even when working with a remote cluster.
+// MAGIC * Iterate quickly when developing libraries. 
+// MAGIC * Shut down idle clusters without losing work. 
+// MAGIC 
+// MAGIC For more information, see <a href="https://docs.databricks.com/dev-tools/databricks-connect.html" target="_blank">https&#58;//docs.databricks.com/dev-tools/databricks-connect.html</a>
+
+// COMMAND ----------
+
 // MAGIC %md
 // MAGIC 
 // MAGIC ##![Spark Logo Tiny](https://files.training.databricks.com/images/105/logo_spark_tiny.png) Notebook Interfaces for Python Development
