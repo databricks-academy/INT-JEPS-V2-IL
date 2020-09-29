@@ -200,7 +200,7 @@ type("723")
 # MAGIC A few things to note on Python variable names:
 # MAGIC * A variable name must start with a letter or the underscore character
 # MAGIC * Conversely, a variable name cannot start with a number
-# MAGIC * A variable name can only contain alpha-numeric characters and underscores (a-Z, A-Z, 0-9, and _ )
+# MAGIC * A variable name can only contain alpha-numeric characters and underscores (a-z, A-Z, 0-9, and _ )
 # MAGIC * Variable names are case-sensitive (`age`, `Age`, and `AGE` are three different variables)
 # MAGIC 
 # MAGIC Beyond these hard requirements, additional standards are often imposed by development teams so as to produce consistent and easy to read code.
@@ -377,7 +377,7 @@ print("All done")
 # MAGIC %md
 # MAGIC ### ![Spark Logo Tiny](https://files.training.databricks.com/images/105/logo_spark_tiny.png) Review
 # MAGIC 
-# MAGIC **Question**: What mathimatical operators were you introduced to in this lesson?<br/>
+# MAGIC **Question**: Which mathematical operators were you introduced to in this lesson?<br/>
 # MAGIC Hint: See the python docs on Lexical analysis, section 2.5, <a href="https://docs.python.org/3/reference/lexical_analysis.html#operators" target="_blank">Operators</a>
 # MAGIC 
 # MAGIC **Question**: What reserved keywords were you introduced to in this lesson?<br/>

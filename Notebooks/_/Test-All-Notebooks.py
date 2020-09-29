@@ -19,7 +19,7 @@
 # MAGIC home = f"""/Projects/{tags["user"]}/INT-JEPFS-V2-IL/Notebooks"""
 # MAGIC 
 # MAGIC notebooks = [
-# MAGIC   f"{home}/JEP 01 - Databricks Environment",
+# MAGIC   f"{home}/JEP 01 - Getting Started With Python",
 # MAGIC   f"{home}/JEP 02 - Variables and Data Types",
 # MAGIC   f"{home}/JEP 03 - Conditionals and Loops",
 # MAGIC   f"{home}/JEP 04 - Methods, Functions, Packages",
@@ -81,6 +81,3 @@ for key in resultsMap:
 # COMMAND ----------
 
 deleteJobs(sku)
-
-# COMMAND ----------
-
