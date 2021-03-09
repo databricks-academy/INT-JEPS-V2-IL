@@ -8,15 +8,15 @@
   },
 	"links": [{
 			"name": "Projects Repo",
-			"value": "https://github.com/databricks-academy/INT-JEPFS-V2-IL"
+			"value": "https://github.com/databricks-academy/just-enough-python-for-spark"
 		},
 		{
 			"name": "Change Log",
-			"value": "https://github.com/databricks-academy/INT-JEPFS-V2-IL/blob/published/CHANGELOG.md"
+			"value": "https://github.com/databricks-academy/just-enough-python-for-spark/blob/published/CHANGELOG.md"
 		},
 		{
 			"name": "Notebooks DBC",
-			"value": "https://github.com/databricks-academy/INT-JEPFS-V2-IL/raw/published/Notebooks.dbc"
+			"value": "https://github.com/databricks-academy/just-enough-python-for-spark/raw/published/Notebooks.dbc"
 		}
 	]
 }
